@@ -1,2 +1,5 @@
 # delivery-app
-Frontend application of delivery requests using different frameworks
+
+Этот репозиторий состоит из Frontend-приложений по офомлению доставки на разных фреймворках
+
+## Ссылки:
