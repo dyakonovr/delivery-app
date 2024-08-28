@@ -1,0 +1,63 @@
+/* .typography.size_12px {
+  font-size: 12px;
+}
+
+.typography.size_14px {
+  font-size: 14px;
+}
+
+.typography.size_16px {
+  font-size: 16px;
+}
+
+.typography.size_24px {
+  font-size: 24px;
+}
+
+.typography.weight_400 {
+  font-weight: 400;
+}
+
+.typography.weight_500 {
+  font-weight: 500;
+}
+
+.typography.weight_600 {
+  font-weight: 600;
+}
+
+.typography.weight_700 {
+  font-weight: 600;
+}
+
+.typography.weight_800 {
+  font-weight: 800;
+} */
+
+.typography {
+  color: var(--color-black);
+}
+
+.typography.variant_title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 133%;
+}
+
+.typography.variant_regular {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.typography.variant_small {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 143%;
+}
+
+.typography.variant_extra-small {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 133%;
+}

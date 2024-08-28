@@ -30,6 +30,9 @@ export default [
       "@stylistic/js/comma-dangle": ["warn", "never"],
       "jsx-quotes": ["warn", "prefer-double"],
       "no-console": "warn",
+      "react/display-name": "off",
+      "react/prop-types": "off",
+      "@typescript-eslint/consistent-type-imports": "error",
       "import-x/order": [
         "warn",
         {

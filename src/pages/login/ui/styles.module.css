@@ -1,0 +1,37 @@
+.login_page_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 464px;
+}
+
+.login_page_submit_btn {
+  width: 100%;
+  max-width: 328px;
+}
+
+.login_page_input {
+  width: 100%;
+}
+
+.login_page_input::-webkit-outer-spin-button,
+.login_page_input::-webkit-inner-spin-button {
+  /* Chrome, Safari, Edge, Opera */
+  -webkit-appearance: none;
+  margin: 0;
+
+  /* Firefox */
+  -moz-appearance: textfield;
+}
+
+.login_page_submit_btn {
+  max-width: 240px;
+}
+
+.login_page_countdown_button {
+  width: fit-content;
+}
+
+.login_page_countdown_button.hidden {
+  display: none;
+}

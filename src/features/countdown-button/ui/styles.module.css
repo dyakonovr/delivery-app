@@ -1,0 +1,5 @@
+.countdown_button_disabled {
+  text-decoration: none !important;
+  color: #97A1AF !important;
+  pointer-events: none;
+}

@@ -1,0 +1,7 @@
+mutation Otp($phone: String!) {
+  createOtp(phone: $phone) {
+    reason
+    retryDelay
+    success
+  }
+}

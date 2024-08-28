@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --color-primary: #1975FF;
+  --color-black: #344051;
+  --color-white: #fff;
+  --color-error: #F64C4C;
+}
+
+.default-page-vertical-offsets {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}

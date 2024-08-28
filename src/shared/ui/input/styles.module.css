@@ -1,0 +1,54 @@
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  --border-color: #CED2DA;
+  --hover-border-color: #97A1AF;
+  --focus-border-color: #4C94FF;
+
+  --disabled-bg-color: #F3F4F6;
+
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 8px 12px 12px;
+  background-color: var(--color-white);
+  font-size: 16px;
+  color: #141C24;
+  outline: none;
+  transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+
+  &:hover {
+    border-color: var(--hover-border-color);
+  }
+
+  &:focus {
+    border-color: var(--focus-border-color);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: var(--disabled-bg-color);
+  }
+}
+
+.input.error {
+  border-color: var(--color-error);
+}
+
+.label {
+  margin: 0 0 6px;
+}
+
+.hint_message {
+  --color: #637083;
+
+  color: var(--color);
+  margin: 4px 0 0;
+}
+
+.error_message {
+  color: var(--color-error);
+  margin: 4px 0 0;
+}

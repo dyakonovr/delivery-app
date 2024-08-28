@@ -1,0 +1,17 @@
+.header {
+  padding: 24px 0;
+  border-bottom: 1px solid #CED2DA;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+}
+
+.auth_button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 0 auto;
+  font-weight: 500;
+}

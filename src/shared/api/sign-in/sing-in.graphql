@@ -1,0 +1,16 @@
+mutation SignIn($phone: String!, $code: Float!) {
+  signin(phone: $phone, code: $code) {
+    reason
+    success
+    token
+    user {
+      _id
+      city
+      email
+      firstname
+      lastname
+      middlename
+      phone
+    }
+  }
+}
