@@ -33,7 +33,7 @@ export const Typography = ({
   children,
   ...props
 }: Props) => {
-  const Component = tag;
+  const Component = variant === "title" ? "h1" : tag;
 
   return (
     <Component

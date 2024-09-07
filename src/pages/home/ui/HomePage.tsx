@@ -1,11 +1,12 @@
-import { Typography } from "@/shared/ui";
+import { HomePageRightColumn } from "./RightColumn";
+import { HomePageLeftColumn } from "./LeftColumn";
+import classes from "./styles.module.css";
 
-function HomePage() {
+export function HomePage() {
   return (
-    <div>
-      <Typography variant="title">Home</Typography>
+    <div className={classes["home_page_wrapper"]}>
+      <HomePageLeftColumn />
+      <HomePageRightColumn />
     </div>
   );
 }
-
-export default HomePage;

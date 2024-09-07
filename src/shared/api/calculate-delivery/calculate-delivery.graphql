@@ -1,0 +1,21 @@
+mutation CalculateDelivery(
+  $package: CalculateDeliveryPackageDto!
+  $receiverPoint: CalculateDeliveryPointDto!
+  $senderPoint: CalculateDeliveryPointDto!
+) {
+  calculateDelivery(
+    package: $package
+    receiverPoint: $receiverPoint
+    senderPoint: $senderPoint
+  ) {
+    options {
+      days
+      id
+      name
+      price
+      type
+    }
+    reason
+    success
+  }
+}

@@ -3,17 +3,16 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import ReactDOM from "react-dom/client";
 import { ApolloProvider } from "@apollo/client";
 import { rootRoute } from "./router/root";
-import { homeRoute, loginRoute } from "./router";
+import { createDeliveryRoute, historyRoute, homeRoute, loginRoute } from "./router";
 import "./assets/style.css";
 import { apolloClient } from "./apollo";
 
-// createRoot(document.getElementById("root")!).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>
-// );
-
-const routeTree = rootRoute.addChildren([homeRoute, loginRoute]);
+const routeTree = rootRoute.addChildren([
+  homeRoute,
+  loginRoute,
+  createDeliveryRoute,
+  historyRoute
+]);
 
 const router = createRouter({ routeTree });
 

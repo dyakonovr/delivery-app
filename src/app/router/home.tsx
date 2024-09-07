@@ -1,6 +1,6 @@
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "./root";
-import HomePage from "@/pages/home/ui/HomePage";
+import { HomePage } from "@/pages/home";
 import { PagePaths } from "@/shared/config";
 
 export const homeRoute = createRoute({

@@ -1,7 +1,7 @@
 import { OTP_VALUE_LENGTH } from "../config/constants";
 import { useLoginPage } from "../hooks/useLoginPage";
 import classes from "./styles.module.css";
-import { filterNumberKeys } from "@/shared/utils";
+import { filterNumberKeys } from "@/shared/lib";
 import { Button, Container, Input, Typography } from "@/shared/ui";
 import { CountdownButton } from "@/features/countdown-button";
 

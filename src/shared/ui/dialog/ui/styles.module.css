@@ -1,0 +1,63 @@
+.dialog_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #00000070;
+
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dialog_wrapper.is_open {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 24px;
+  padding: 72px;
+  max-width: 500px;
+}
+
+.dialog_title {
+  margin: 24px 0 0;
+}
+
+.dialog_descr {
+  font-size: 24px;
+  margin: 16px 0 0;
+  text-align: center;
+}
+
+.dialog_btn {
+  width: 100%;
+  margin: 40px 0 0;
+}
+
+.dialog_close_btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.dialog_close_btn:hover .dialog_close_btn_icon {
+  stroke: var(--color-black);
+}
+
+.dialog_close_btn_icon {
+  stroke: #CED2DA;
+  transition: stroke 0.1s linear;
+}

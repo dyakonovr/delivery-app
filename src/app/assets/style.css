@@ -10,9 +10,46 @@
   --color-black: #344051;
   --color-white: #fff;
   --color-error: #F64C4C;
+
+  --container-width: 1000px;
+  --container-offset: 20px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  background: transparent;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
 .default-page-vertical-offsets {
   padding-top: 48px;
   padding-bottom: 48px;
+}
+
+.first-letter-big::first-letter {
+  text-transform: capitalize;
 }

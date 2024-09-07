@@ -1,30 +1,25 @@
-import { gql } from "@apollo/client";
-import * as Apollo from "@apollo/client";
-import type * as Types from "../../graphql/types.gql.generated";
+import * as Types from '../types.gql.generated';
+
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type OtpMutationVariables = Types.Exact<{
-  phone: Types.Scalars["String"]["input"];
+  phone: Types.Scalars['String']['input'];
 }>;
 
-export type OtpMutation = {
-  __typename?: "Mutation";
-  createOtp: {
-    __typename?: "OtpResponse";
-    reason?: string | null;
-    retryDelay: number;
-    success: boolean;
-  };
-};
+
+export type OtpMutation = { __typename?: 'Mutation', createOtp: { __typename?: 'OtpResponse', reason?: string | null, retryDelay: number, success: boolean } };
+
 
 export const OtpDocument = gql`
-  mutation Otp($phone: String!) {
-    createOtp(phone: $phone) {
-      reason
-      retryDelay
-      success
-    }
+    mutation Otp($phone: String!) {
+  createOtp(phone: $phone) {
+    reason
+    retryDelay
+    success
   }
-`;
+}
+    `;
 export type OtpMutationFn = Apollo.MutationFunction<OtpMutation, OtpMutationVariables>;
 
 /**
@@ -44,15 +39,10 @@ export type OtpMutationFn = Apollo.MutationFunction<OtpMutation, OtpMutationVari
  *   },
  * });
  */
-export function useOtpMutation(
-  baseOptions?: Apollo.MutationHookOptions<OtpMutation, OtpMutationVariables>
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<OtpMutation, OtpMutationVariables>(OtpDocument, options);
-}
+export function useOtpMutation(baseOptions?: Apollo.MutationHookOptions<OtpMutation, OtpMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<OtpMutation, OtpMutationVariables>(OtpDocument, options);
+      }
 export type OtpMutationHookResult = ReturnType<typeof useOtpMutation>;
 export type OtpMutationResult = Apollo.MutationResult<OtpMutation>;
-export type OtpMutationOptions = Apollo.BaseMutationOptions<
-  OtpMutation,
-  OtpMutationVariables
->;
+export type OtpMutationOptions = Apollo.BaseMutationOptions<OtpMutation, OtpMutationVariables>;

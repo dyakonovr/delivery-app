@@ -1,0 +1,14 @@
+query GetDeliveryPackageTypes {
+  getDeliveryPackageTypes {
+    packages {
+      id
+      name
+      width
+      height
+      weight
+      length
+    }
+    reason
+    success
+  }
+}

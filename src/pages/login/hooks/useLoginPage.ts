@@ -6,7 +6,7 @@ import { loginFormSchema, type LoginFormSchema } from "../model/login-schema";
 import type { FieldErrors, UseFormRegister } from "react-hook-form";
 import { useOtpMutation, useSignInMutation } from "@/shared/api";
 import { useUserStore } from "@/entities/user/model";
-import { toastGraphqlErrros } from "@/shared/utils";
+import { toastGraphqlErrros } from "@/shared/lib";
 import { PagePaths } from "@/shared/config";
 
 interface UseLoginPage {

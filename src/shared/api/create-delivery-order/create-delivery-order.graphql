@@ -1,0 +1,24 @@
+mutation CreateDeliveryOrder(
+  $option: CreateDeliveryOrderDeliveryOptionDto!
+  $payer: Payer!
+  $receiver: CreateDeliveryOrderPersonDto!
+  $receiverAddress: CreateDeliveryOrderAddressDto!
+  $receiverPoint: CreateDeliveryOrderPointDto!
+  $sender: CreateDeliveryOrderPersonDto!
+  $senderAddress: CreateDeliveryOrderAddressDto!
+  $senderPoint: CreateDeliveryOrderPointDto!
+) {
+  createDeliveryOrder(
+    option: $option
+    payer: $payer
+    receiver: $receiver
+    receiverAddress: $receiverAddress
+    receiverPoint: $receiverPoint
+    sender: $sender
+    senderAddress: $senderAddress
+    senderPoint: $senderPoint
+  ) {
+    success
+    reason
+  }
+}
