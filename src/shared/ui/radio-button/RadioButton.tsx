@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { Check } from "lucide-react";
-import { Typography } from "../typography";
+import { Typography } from "../typography/Typography";
 import classes from "./styles.module.css";
 import type { ChangeEvent } from "react";
 

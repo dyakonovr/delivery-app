@@ -1,0 +1,16 @@
+query GetDeliveryOrders {
+  getDeliveryOrders {
+    reason
+    success
+    orders {
+      _id
+      status
+      cancellable
+      receiverAddress {
+        apartment
+        house
+        street
+      }
+    }
+  }
+}

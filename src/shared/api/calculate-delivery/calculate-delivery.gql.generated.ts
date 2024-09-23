@@ -1,6 +1,7 @@
-import { gql } from "@apollo/client";
-import * as Apollo from "@apollo/client";
-import type * as Types from "../types.gql.generated";
+import * as Types from '../types.gql.generated';
+
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type CalculateDeliveryMutationVariables = Types.Exact<{
   package: Types.CalculateDeliveryPackageDto;
@@ -8,50 +9,30 @@ export type CalculateDeliveryMutationVariables = Types.Exact<{
   senderPoint: Types.CalculateDeliveryPointDto;
 }>;
 
-export type CalculateDeliveryMutation = {
-  __typename?: "Mutation";
-  calculateDelivery: {
-    __typename?: "CalculateDeliveryResponse";
-    reason?: string | null;
-    success: boolean;
-    options: Array<{
-      __typename?: "DeliveryOption";
-      days: number;
-      id: string;
-      name: string;
-      price: number;
-      type: Types.DeliveryOptionType;
-    }>;
-  };
-};
+
+export type CalculateDeliveryMutation = { __typename?: 'Mutation', calculateDelivery: { __typename?: 'CalculateDeliveryResponse', reason?: string | null, success: boolean, options: Array<{ __typename?: 'DeliveryOption', days: number, id: string, name: string, price: number, type: Types.DeliveryOptionType }> } };
+
 
 export const CalculateDeliveryDocument = gql`
-  mutation CalculateDelivery(
-    $package: CalculateDeliveryPackageDto!
-    $receiverPoint: CalculateDeliveryPointDto!
-    $senderPoint: CalculateDeliveryPointDto!
+    mutation CalculateDelivery($package: CalculateDeliveryPackageDto!, $receiverPoint: CalculateDeliveryPointDto!, $senderPoint: CalculateDeliveryPointDto!) {
+  calculateDelivery(
+    package: $package
+    receiverPoint: $receiverPoint
+    senderPoint: $senderPoint
   ) {
-    calculateDelivery(
-      package: $package
-      receiverPoint: $receiverPoint
-      senderPoint: $senderPoint
-    ) {
-      options {
-        days
-        id
-        name
-        price
-        type
-      }
-      reason
-      success
+    options {
+      days
+      id
+      name
+      price
+      type
     }
+    reason
+    success
   }
-`;
-export type CalculateDeliveryMutationFn = Apollo.MutationFunction<
-  CalculateDeliveryMutation,
-  CalculateDeliveryMutationVariables
->;
+}
+    `;
+export type CalculateDeliveryMutationFn = Apollo.MutationFunction<CalculateDeliveryMutation, CalculateDeliveryMutationVariables>;
 
 /**
  * __useCalculateDeliveryMutation__
@@ -72,24 +53,10 @@ export type CalculateDeliveryMutationFn = Apollo.MutationFunction<
  *   },
  * });
  */
-export function useCalculateDeliveryMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    CalculateDeliveryMutation,
-    CalculateDeliveryMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<
-    CalculateDeliveryMutation,
-    CalculateDeliveryMutationVariables
-  >(CalculateDeliveryDocument, options);
-}
-export type CalculateDeliveryMutationHookResult = ReturnType<
-  typeof useCalculateDeliveryMutation
->;
-export type CalculateDeliveryMutationResult =
-  Apollo.MutationResult<CalculateDeliveryMutation>;
-export type CalculateDeliveryMutationOptions = Apollo.BaseMutationOptions<
-  CalculateDeliveryMutation,
-  CalculateDeliveryMutationVariables
->;
+export function useCalculateDeliveryMutation(baseOptions?: Apollo.MutationHookOptions<CalculateDeliveryMutation, CalculateDeliveryMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CalculateDeliveryMutation, CalculateDeliveryMutationVariables>(CalculateDeliveryDocument, options);
+      }
+export type CalculateDeliveryMutationHookResult = ReturnType<typeof useCalculateDeliveryMutation>;
+export type CalculateDeliveryMutationResult = Apollo.MutationResult<CalculateDeliveryMutation>;
+export type CalculateDeliveryMutationOptions = Apollo.BaseMutationOptions<CalculateDeliveryMutation, CalculateDeliveryMutationVariables>;

@@ -7,7 +7,7 @@ import type { FieldErrors, UseFormRegister } from "react-hook-form";
 import { useOtpMutation, useSignInMutation } from "@/shared/api";
 import { useUserStore } from "@/entities/user/model";
 import { toastGraphqlErrros } from "@/shared/lib";
-import { PagePaths } from "@/shared/config";
+import { LOCALSTORAGE_TOKEN, PagePaths } from "@/shared/config";
 
 interface UseLoginPage {
   otpCountdown: number;
@@ -78,6 +78,7 @@ export const useLoginPage = (): UseLoginPage => {
       if (!response.data) throw new Error("Unexpected error!");
 
       setUser(response.data.signin.user);
+      localStorage.setItem(LOCALSTORAGE_TOKEN, response.data.signin.token);
       navigate({ to: PagePaths.HOME });
     } catch (error) {
       console.error("Sign in error:", error);

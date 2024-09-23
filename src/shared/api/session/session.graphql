@@ -1,0 +1,15 @@
+query Session {
+  session {
+    reason
+    success
+    user {
+      _id
+      city
+      email
+      firstname
+      lastname
+      middlename
+      phone
+    }
+  }
+}

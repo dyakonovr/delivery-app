@@ -1,2 +1,3 @@
 export * from "./backend";
-export * from "./router-paths";
+export * from "./page-paths";
+export * from "./contsants";

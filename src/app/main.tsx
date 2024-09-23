@@ -5,7 +5,8 @@ import { ApolloProvider } from "@apollo/client";
 import { rootRoute } from "./router/root";
 import { createDeliveryRoute, historyRoute, homeRoute, loginRoute } from "./router";
 import "./assets/style.css";
-import { apolloClient } from "./apollo";
+import { apolloClient } from "./api";
+import { RefreshSession } from "../widgets/refresh-session/ui/RefreshSession";
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
@@ -29,6 +30,7 @@ if (!rootElement.innerHTML) {
     <StrictMode>
       <ApolloProvider client={apolloClient}>
         <RouterProvider router={router} />
+        <RefreshSession />
       </ApolloProvider>
     </StrictMode>
   );

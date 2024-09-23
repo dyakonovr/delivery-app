@@ -4,8 +4,8 @@ import { immer } from "zustand/middleware/immer";
 import type { User } from "./types";
 
 type State = {
-  user: null | User;
-  isAuth: boolean;
+  user: User | null;
+  isAuth: boolean | null;
 };
 
 type Actions = {
@@ -16,7 +16,7 @@ export const useUserStore = create<State & Actions>()(
   devtools(
     immer((set) => ({
       user: null,
-      isAuth: false,
+      isAuth: null,
       setUser: (user: User | null) =>
         set((state) => {
           state.user = user;

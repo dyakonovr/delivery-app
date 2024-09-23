@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, forwardRef } from "react";
-import { Typography } from "../typography";
+import { Typography } from "../typography/Typography";
 import classes from "./styles.module.css";
 import type { ComponentProps } from "react";
 
