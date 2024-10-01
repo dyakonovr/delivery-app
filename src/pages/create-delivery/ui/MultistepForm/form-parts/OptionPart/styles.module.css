@@ -1,0 +1,58 @@
+.create_delivery_form_option_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.create_delivery_form_option {
+    border: 1px solid;
+    display: flex;
+    border-radius: 24px;
+    padding: 16px;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.create_delivery_form_option_express {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.create_delivery_form_option_default {
+    border-color: #E3E5E5;
+}
+
+.create_delivery_form_option_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+}
+
+.create_delivery_form_option_express .create_delivery_form_option_icon {
+    background-color: var(--color-white);
+}
+
+.create_delivery_form_option_default .create_delivery_form_option_icon {
+    background-color: #F3F4F6;
+}
+
+.create_delivery_form_option_express .create_delivery_form_option_text {
+    color: var(--color-white) !important;
+}
+
+.create_delivery_form_option_express .create_delivery_form_option_icon_img {
+    stroke: var(--color-primary);
+}
+
+.create_delivery_form_option_default .create_delivery_form_option_icon_img {
+    stroke: #97A1AF;
+}
+
+.create_delivery_form_option_price {
+    font-size: 20px !important;
+    margin: 8px 0 24px;
+}
