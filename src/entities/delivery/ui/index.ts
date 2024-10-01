@@ -1,1 +1,2 @@
-export * from "./delivery-row";
+export * from "./deliveries-history-row";
+export * from "./delivery-details";

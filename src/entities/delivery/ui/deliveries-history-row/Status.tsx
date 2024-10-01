@@ -35,7 +35,7 @@ function getPointClass(status: DeliveryStatus) {
   }
 }
 
-export function DeliveryRowStatus({ status }: Props) {
+export function DeliveriesHistoryRowStatus({ status }: Props) {
   return (
     <>
       <Typography variant="regular" className={classes["delivery_row_status_wrapper"]}>

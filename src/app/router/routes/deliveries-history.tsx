@@ -1,15 +1,15 @@
 import { createRoute } from "@tanstack/react-router";
-import { rootRoute } from "./root";
+import { rootRoute } from "./root.tsx";
 import { PagePaths } from "@/shared/config";
-import { CreateDeliveryPage } from "@/pages/create-delivery";
+import { DeliveriesHistoryPage } from "@/pages/history";
 import { PrivateRoute } from "@/widgets/private-route";
 
-export const createDeliveryRoute = createRoute({
+export const deliveriesHistoryRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: PagePaths.CREATE_DELIVERY,
+  path: PagePaths.DELIVERIES_HISTORY,
   component: () => (
     <PrivateRoute>
-      <CreateDeliveryPage />
+      <DeliveriesHistoryPage />
     </PrivateRoute>
   )
 });

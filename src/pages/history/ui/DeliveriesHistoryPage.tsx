@@ -1,11 +1,11 @@
 import { Loader2 as LoaderIcon } from "lucide-react";
 import classes from "./styles.module.css";
-import { DeliveryRow } from "@/entities/delivery";
+import { DeliveriesHistoryRow } from "@/entities/delivery";
 import { useGetDeliveryOrdersQuery } from "@/shared/api";
 import { Container, Typography } from "@/shared/ui";
 import { API_AUTHORIZATION_TOKEN, API_HEADER_AUTHORIZATION } from "@/shared/config";
 
-export function HistoryPage() {
+export function DeliveriesHistoryPage() {
   const { data, loading } = useGetDeliveryOrdersQuery({
     context: {
       headers: {
@@ -26,7 +26,7 @@ export function HistoryPage() {
       {orders &&
         !loading &&
         orders.map((order) => (
-          <DeliveryRow
+          <DeliveriesHistoryRow
             deliveryId={order._id}
             status={order.status}
             receiverAddress={order.receiverAddress}

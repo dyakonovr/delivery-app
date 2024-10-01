@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/react-router";
-import { rootRoute } from "./root";
+import { rootRoute } from "./root.tsx";
 import { HomePage } from "@/pages/home";
 import { PagePaths } from "@/shared/config";
 

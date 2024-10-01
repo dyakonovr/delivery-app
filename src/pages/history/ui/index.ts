@@ -1,1 +1,1 @@
-export * from "./HistoryPage";
+export * from "./DeliveriesHistoryPage.tsx";

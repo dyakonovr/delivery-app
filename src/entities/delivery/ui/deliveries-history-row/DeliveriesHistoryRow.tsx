@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import classes from "./styles.module.css";
-import { DeliveryRowStatus } from "./Status";
+import { DeliveriesHistoryRowStatus } from "./Status";
 import type { DeliveryOrder } from "@/shared/api";
 import { Button, Typography } from "@/shared/ui";
 import { PagePaths } from "@/shared/config";
@@ -11,7 +11,7 @@ interface Props {
   receiverAddress: DeliveryOrder["receiverAddress"]; // ???
 }
 
-export function DeliveryRow({ deliveryId, status, receiverAddress }: Props) {
+export function DeliveriesHistoryRow({ deliveryId, status, receiverAddress }: Props) {
   const navigate = useNavigate();
 
   return (
@@ -34,7 +34,7 @@ export function DeliveryRow({ deliveryId, status, receiverAddress }: Props) {
         >
           Статус
         </Typography>
-        <DeliveryRowStatus status={status} />
+        <DeliveriesHistoryRowStatus status={status} />
       </div>
       <div>
         <Typography
@@ -49,7 +49,7 @@ export function DeliveryRow({ deliveryId, status, receiverAddress }: Props) {
       <Button
         variant="link"
         color="secondary"
-        onClick={() => navigate({ to: `${PagePaths.DELIVERY_ITEM}/${deliveryId}` })}
+        onClick={() => navigate({ to: `${PagePaths.DELIVERY_DETAILS}/${deliveryId}` })}
       >
         Подробнее
       </Button>
