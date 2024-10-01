@@ -49,6 +49,5 @@
 }
 
 .error_message {
-  color: var(--color-error);
   margin: 4px 0 0;
 }

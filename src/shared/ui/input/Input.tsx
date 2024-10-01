@@ -40,7 +40,11 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         )}
 
         {errorMessage && (
-          <Typography variant="small" tag="p" className={classes["error_message"]}>
+          <Typography
+            variant="small"
+            tag="p"
+            className={`error-message ${classes["error_message"]}`}
+          >
             {errorMessage}
           </Typography>
         )}

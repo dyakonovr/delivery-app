@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.4",
+    "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.9.0",
     "@tanstack/react-router": "^1.49.7",
     "effector": "^23.2.2",

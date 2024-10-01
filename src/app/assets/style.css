@@ -49,6 +49,10 @@ ul, ol {
   cursor: pointer;
 }
 
+.error-message {
+  color: var(--color-error);
+}
+
 .default-page-vertical-offsets {
   padding-top: 48px;
   padding-bottom: 48px;
