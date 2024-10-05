@@ -5,7 +5,7 @@ import { ApolloProvider } from "@apollo/client";
 import "./assets/style.css";
 import { apolloClient } from "./api";
 import { router } from "./router";
-import { RefreshSession } from "@/widgets/refresh-session";
+import { RefreshSession } from "@/features/refresh-session";
 
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {
