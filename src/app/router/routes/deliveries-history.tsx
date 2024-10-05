@@ -1,7 +1,7 @@
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "./root.tsx";
 import { PagePaths } from "@/shared/config";
-import { DeliveriesHistoryPage } from "@/pages/history";
+import { DeliveriesHistoryPage } from "@/pages/deliveries-history";
 import { PrivateRoute } from "@/widgets/private-route";
 
 export const deliveriesHistoryRoute = createRoute({

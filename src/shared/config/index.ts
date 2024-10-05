@@ -1,3 +1,3 @@
 export * from "./backend";
 export * from "./page-paths";
-export * from "./contsants";
+export * from "./constants.ts";

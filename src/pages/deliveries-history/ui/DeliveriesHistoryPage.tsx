@@ -1,17 +1,12 @@
-import { Loader2 as LoaderIcon } from "lucide-react";
 import classes from "./styles.module.css";
 import { DeliveriesHistoryRow } from "@/entities/delivery";
 import { useGetDeliveryOrdersQuery } from "@/shared/api";
-import { Container, Typography } from "@/shared/ui";
-import { API_AUTHORIZATION_TOKEN, API_HEADER_AUTHORIZATION } from "@/shared/config";
+import { Container, LoadingSpin, Typography } from "@/shared/ui";
+import { GRAPHQL_AUTHORIZATION_CONTEXT } from "@/shared/config";
 
 export function DeliveriesHistoryPage() {
   const { data, loading } = useGetDeliveryOrdersQuery({
-    context: {
-      headers: {
-        [API_HEADER_AUTHORIZATION]: API_AUTHORIZATION_TOKEN
-      }
-    }
+    ...GRAPHQL_AUTHORIZATION_CONTEXT
   });
   const orders = data?.getDeliveryOrders.orders;
 
@@ -21,7 +16,7 @@ export function DeliveriesHistoryPage() {
     >
       <Typography variant="title">История</Typography>
 
-      {loading && <LoaderIcon className="spin-animation" />}
+      {loading && <LoadingSpin />}
 
       {orders &&
         !loading &&

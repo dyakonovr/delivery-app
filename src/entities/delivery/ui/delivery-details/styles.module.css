@@ -1,0 +1,25 @@
+.delivery_details_blocks_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.delivery_details_block {
+    border-radius: 24px;
+    border: 1px solid #E3E5E5;
+    padding: 24px 48px;
+    background-color: #F3F4F6;
+}
+
+.delivery_details_block_title {
+    font-weight: 600 !important;
+}
+
+.delivery_details_block_items_wrapper {
+    margin-top: 24px;
+}
+
+.delivery_details_block_items_title {
+    color: #637083;
+}

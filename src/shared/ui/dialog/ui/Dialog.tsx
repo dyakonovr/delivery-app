@@ -1,40 +1,36 @@
-/// <reference types="vite-plugin-svgr/client" />
-import { X as CloseIcon } from "lucide-react";
 import { createPortal } from "react-dom";
-import DoneIconSvg from "../assets/img/done-icon.svg?react";
+import { X as CloseIcon } from "lucide-react";
 import { useDialog } from "../hooks/useDialog";
 import classes from "./styles.module.css";
-import { Button, Typography } from "@/shared/ui";
+import { DialogIcon } from "./Icon";
+import type { DialogIconType } from "./Icon";
+import { Typography } from "@/shared/ui";
 
 interface Props {
   dialogClassName?: string;
+  icon?: DialogIconType;
   title: string;
   description?: string;
-  buttonText: string;
+  footerButtons?: JSX.Element;
 
   isOpened: boolean;
-  onButtonClick?: () => void;
   onCloseClick?: () => void;
 }
 
 export function Dialog({
   title,
   description,
-  buttonText,
   dialogClassName = "",
   isOpened,
-  onButtonClick,
+  icon,
+  footerButtons,
   onCloseClick
 }: Props) {
-  const { isOpen, onCloseFx, onSubmitFx } = useDialog(
-    isOpened,
-    onButtonClick,
-    onCloseClick
-  );
+  const { dialogRef, isOpen, onCloseFx } = useDialog(isOpened, onCloseClick);
 
   return createPortal(
     <div className={`${classes["dialog_wrapper"]} ${isOpen && classes["is_open"]}`}>
-      <div className={`${classes["dialog"]} ${dialogClassName}`}>
+      <div className={`${classes["dialog"]} ${dialogClassName}`} ref={dialogRef}>
         <button
           className={`btn-reset ${classes["dialog_close_btn"]}`}
           type="button"
@@ -43,7 +39,7 @@ export function Dialog({
           <CloseIcon className={classes["dialog_close_btn_icon"]} />
         </button>
 
-        <DoneIconSvg />
+        <DialogIcon icon={icon} />
         <Typography variant="title" className={classes["dialog_title"]}>
           {title}
         </Typography>
@@ -52,14 +48,10 @@ export function Dialog({
             {description}
           </Typography>
         )}
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes["dialog_btn"]}
-          onClick={onSubmitFx}
-        >
-          {buttonText}
-        </Button>
+
+        {footerButtons && (
+          <div className={classes["dialog_buttons"]}>{footerButtons}</div>
+        )}
       </div>
     </div>,
     document.body

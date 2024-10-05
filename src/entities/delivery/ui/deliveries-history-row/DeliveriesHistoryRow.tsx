@@ -49,7 +49,9 @@ export function DeliveriesHistoryRow({ deliveryId, status, receiverAddress }: Pr
       <Button
         variant="link"
         color="secondary"
-        onClick={() => navigate({ to: `${PagePaths.DELIVERY_DETAILS}/${deliveryId}` })}
+        onClick={() =>
+          navigate({ to: PagePaths.DELIVERY_DETAILS, params: { orderId: deliveryId } })
+        }
       >
         Подробнее
       </Button>

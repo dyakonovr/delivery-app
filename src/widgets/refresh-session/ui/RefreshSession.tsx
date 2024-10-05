@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { useUserStore } from "@/entities/user";
 import { useSessionQuery } from "@/shared/api";
-import { API_AUTHORIZATION_TOKEN, API_HEADER_AUTHORIZATION } from "@/shared/config";
+import { GRAPHQL_AUTHORIZATION_CONTEXT } from "@/shared/config";
 
 export function RefreshSession() {
   const { setUser } = useUserStore();
   const { data, loading } = useSessionQuery({
-    context: {
-      headers: {
-        [API_HEADER_AUTHORIZATION]: API_AUTHORIZATION_TOKEN
-      }
-    }
+    ...GRAPHQL_AUTHORIZATION_CONTEXT
   });
 
   useEffect(() => {

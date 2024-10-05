@@ -3,11 +3,12 @@ import { useFormContext } from "react-hook-form";
 import { type CreateDeliveryFormSchema, MultistepFormContext } from "../../model";
 import classes from "../styles.module.css";
 import {
-  MultistepFormResultPart,
+  CreateDeliveryPageOptionPart,
   MultistepFormInputsPart,
   MultistepFormRadioButtonsPart,
-  CreateDeliveryPageOptionPart
+  MultistepFormResultPart
 } from "./form-parts";
+import type { MultistepFormInputField } from "./form-parts";
 import type { CreateDeliveryFormFields } from "../../model";
 import type { CalculateDeliveryOptions } from "@/shared/api";
 import { Button } from "@/shared/ui";
@@ -15,11 +16,7 @@ import { Button } from "@/shared/ui";
 type InputsPartProps = {
   type: "inputs";
   title: string;
-  fields: {
-    labelText: string;
-    placeholder: string;
-    registerKey: CreateDeliveryFormFields;
-  }[];
+  fields: MultistepFormInputField[];
   key: string;
 };
 

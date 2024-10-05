@@ -1,0 +1,10 @@
+.delivery_details_loader {
+    margin-top: 24px;
+}
+
+.delivery_details_buttons {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

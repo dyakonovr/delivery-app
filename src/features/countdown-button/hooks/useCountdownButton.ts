@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useCountDown from "@/shared/hooks/useCountdown";
+import { useCountDown } from "@/shared/hooks";
 
 interface Props {
   delayInMs: number;

@@ -1,0 +1,36 @@
+query GetDeliveryOrder($orderId: String!) {
+    getDeliveryOrder(orderId: $orderId) {
+        reason
+        success
+        order {
+            _id
+            cancellable
+            payer
+            receiver {
+                firstname
+                lastname
+                middlename
+                phone
+            }
+            sender {
+                firstname
+                lastname
+                middlename
+                phone
+            }
+            receiverAddress {
+                apartment
+                comment
+                house
+                street
+            }
+            senderAddress {
+                apartment
+                comment
+                house
+                street
+            }
+            status
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 import { ResultPartItem } from "./PartItem";
 import classes from "./styles.module.css";
 import type { CreateDeliveryFormSchema } from "@/pages/create-delivery/model";
-import { Typography, Dialog } from "@/shared/ui";
+import { Typography, Dialog, Button } from "@/shared/ui";
 import {
   formatDeliveryPrice,
   formatDeliveryTime,
@@ -70,12 +70,16 @@ export function MultistepFormResultPart({
       </div>
 
       <Dialog
+        icon={"success"}
         title="Заявка отправлена"
         description="Вы можете оплатить ваш заказ в разделе «Профиль»"
-        buttonText="Посмотреть статус"
         isOpened={isDialogShowed}
-        onButtonClick={onDialogSubmit}
         onCloseClick={onDialogClose}
+        footerButtons={
+          <Button variant={"contained"} color={"primary"} onClick={onDialogSubmit}>
+            Посмотреть статус
+          </Button>
+        }
       />
     </>
   );

@@ -50,7 +50,7 @@ ul, ol {
 }
 
 .error-message {
-  color: var(--color-error);
+  color: var(--color-error) !important;
 }
 
 .default-page-vertical-offsets {

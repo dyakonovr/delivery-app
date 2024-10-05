@@ -6,3 +6,4 @@ export * from "./input";
 export * from "./select";
 export * from "./radio-button";
 export * from "./dialog";
+export * from "./loading-spin";

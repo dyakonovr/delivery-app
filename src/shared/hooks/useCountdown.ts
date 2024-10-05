@@ -7,7 +7,10 @@ type Actions = {
   reset: () => void;
 };
 
-const useCountDown = (timeToCount = 60 * 1000, interval = 1000): [number, Actions] => {
+export const useCountDown = (
+  timeToCount = 60 * 1000,
+  interval = 1000
+): [number, Actions] => {
   const [timeLeft, setTimeLeft] = React.useState(0);
   const timer = React.useRef<{
     started?: number | null;

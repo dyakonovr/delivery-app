@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import type { MutableRefObject } from "react";
+import { useClickOutside } from "@/shared/hooks";
 
 interface UseDialog {
   isOpen: boolean;
-  onSubmitFx: () => void;
+  dialogRef: MutableRefObject<HTMLDivElement | null>;
   onCloseFx: () => void;
 }
 
-export const useDialog = (
-  isOpened: boolean,
-  onSubmit?: () => void,
-  onClose?: () => void
-): UseDialog => {
+export const useDialog = (isOpened: boolean, onClose?: () => void): UseDialog => {
   const [isOpen, setIsOpen] = useState(isOpened);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  useClickOutside(dialogRef, () => setIsOpen(false));
 
   useEffect(() => {
     setIsOpen(isOpened);
   }, [isOpened]);
 
   // Functions
-  function onSubmitFx() {
-    try {
-      setIsOpen(false);
-      if (onSubmit) onSubmit();
-    } catch (error) {
-      console.error("Click on submit button in dialog error:", error);
-    }
-  }
-
   function onCloseFx() {
     try {
       setIsOpen(false);
@@ -38,8 +29,8 @@ export const useDialog = (
   // Functions END
 
   return {
+    dialogRef,
     isOpen,
-    onCloseFx,
-    onSubmitFx
+    onCloseFx
   };
 };

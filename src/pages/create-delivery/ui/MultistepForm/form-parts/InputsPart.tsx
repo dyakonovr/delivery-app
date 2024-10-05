@@ -1,15 +1,19 @@
 import { Controller } from "react-hook-form";
 import classes from "../../styles.module.css";
+import type { ComponentProps } from "react";
 import type { CreateDeliveryFormFields } from "../../../model";
 import { Input, Typography } from "@/shared/ui";
 
+export type MultistepFormInputField = {
+  labelText: string;
+  placeholder: string;
+  registerKey: CreateDeliveryFormFields;
+  patternOnInput?: ComponentProps<typeof Input>["patternOnInput"];
+};
+
 interface Props {
   title: string;
-  fields: {
-    labelText: string;
-    placeholder: string;
-    registerKey: CreateDeliveryFormFields;
-  }[];
+  fields: MultistepFormInputField[];
 }
 
 export function MultistepFormInputsPart({ title, fields }: Props) {
@@ -30,6 +34,7 @@ export function MultistepFormInputsPart({ title, fields }: Props) {
               labelText={input.labelText}
               placeholder={input.placeholder}
               errorMessage={fieldState.error?.message}
+              patternOnInput={input.patternOnInput}
               {...field}
             />
           )}
