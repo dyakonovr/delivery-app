@@ -1,3 +1,3 @@
-import type { SignInMutation } from "@/shared/api";
+import type { SignInMutation } from "@/entities/user";
 
 export type User = SignInMutation["signin"]["user"];

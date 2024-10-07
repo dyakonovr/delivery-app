@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { FieldPath } from "react-hook-form";
-import { Payer } from "@/shared/api";
 import { cyrillicRegex, latinRegex } from "@/shared/config";
+import { Payer } from "@/shared/api";
 
 const personSchema = z
   .object({

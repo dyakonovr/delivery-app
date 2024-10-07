@@ -6,7 +6,7 @@ import type { ProfilePageFormField } from "@/pages/profile/ui/Form.tsx";
 import { emailPattern } from "@/pages/profile/model";
 import { profileFormSchema } from "@/pages/profile/model";
 import { useUserStore } from "@/entities/user";
-import { useUpdateProfileMutation } from "@/shared/api";
+import { useUpdateProfileMutation } from "@/entities/user";
 import {
   GRAPHQL_AUTHORIZATION_CONTEXT,
   humanNameRegex,

@@ -1,7 +1,7 @@
 import classes from "./styles.module.css";
 import type { DeliveryOrder } from "@/shared/api";
-import { DeliveryStatus } from "@/shared/api";
 import { Typography } from "@/shared/ui";
+import { DeliveryStatus } from "@/shared/api";
 
 interface Props {
   status: DeliveryOrder["status"];

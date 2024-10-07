@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 import formClasses from "../../../styles.module.css";
 import classes from "./styles.module.css";
 import { CreateDeliveryFormOptionItem } from "./OptionItem";
-import type { CalculateDeliveryOptions } from "@/shared/api";
+import type { CalculateDeliveryOptions } from "@/entities/delivery/api";
 import type {
   CreateDeliveryFormFields,
   CreateDeliveryFormSchema

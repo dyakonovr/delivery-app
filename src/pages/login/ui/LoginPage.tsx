@@ -1,9 +1,9 @@
 import { OTP_VALUE_LENGTH } from "../config";
 import { useLoginPage } from "../hooks";
 import classes from "./styles.module.css";
-import { filterNumberKeys } from "@/shared/lib";
 import { Button, Container, Input, Typography } from "@/shared/ui";
 import { CountdownButton } from "@/features/countdown-button";
+import { onlyNumbersRegex } from "@/shared/config";
 
 export function LoginPage() {
   const {
@@ -29,9 +29,9 @@ export function LoginPage() {
           className={classes["login_page_input"]}
           type="number"
           errorMessage={formErrors["phone"]?.message}
-          onKeyDown={filterNumberKeys}
           disabled={isLoading || isOtpShowed}
           placeholder="Телефон"
+          patternOnInput={onlyNumbersRegex}
           {...register("phone", {
             valueAsNumber: true,
             required: true
@@ -43,11 +43,11 @@ export function LoginPage() {
             className={classes["login_page_input"]}
             type="number"
             errorMessage={formErrors["otpCode"]?.message}
-            onKeyDown={filterNumberKeys}
             placeholder="Проверочный код"
             disabled={isLoading}
             minLength={OTP_VALUE_LENGTH}
             maxLength={OTP_VALUE_LENGTH}
+            patternOnInput={onlyNumbersRegex}
             required
             {...register("otpCode", {
               valueAsNumber: true

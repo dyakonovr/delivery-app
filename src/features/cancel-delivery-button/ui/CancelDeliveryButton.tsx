@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { Button } from "@/shared/ui";
-import { useCancelDeliveryOrderMutation } from "@/shared/api";
+import { useCancelDeliveryOrderMutation } from "@/entities/delivery/api";
 import { GRAPHQL_AUTHORIZATION_CONTEXT } from "@/shared/config";
 
 type ButtonProps = Omit<ComponentProps<typeof Button>, "variant" | "color" | "onClick">;

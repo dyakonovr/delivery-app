@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getRouteApi, useRouter } from "@tanstack/react-router";
 import type { Dispatch, SetStateAction } from "react";
 import type { DeliveryDetailsBlockProps } from "@/entities/delivery";
-import { useGetDeliveryOrderQuery } from "@/shared/api";
+import { useGetDeliveryOrderQuery } from "@/entities/delivery/api";
 import { GRAPHQL_AUTHORIZATION_CONTEXT, PagePaths } from "@/shared/config";
 
 interface UseDeliveryDetails {

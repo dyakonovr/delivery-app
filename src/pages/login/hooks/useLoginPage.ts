@@ -4,10 +4,10 @@ import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { loginFormSchema, type LoginFormSchema } from "../model/form-schema.ts";
 import type { FieldErrors, UseFormRegister } from "react-hook-form";
-import { useOtpMutation, useSignInMutation } from "@/shared/api";
+import { useOtpMutation } from "@/entities/delivery/api";
 import { useUserStore } from "@/entities/user/model";
-import { toastGraphqlErrros } from "@/shared/lib";
 import { LOCALSTORAGE_TOKEN, PagePaths } from "@/shared/config";
+import { useSignInMutation } from "@/entities/user";
 
 interface UseLoginPage {
   otpCountdown: number;
@@ -59,7 +59,6 @@ export const useLoginPage = (): UseLoginPage => {
       const response = await createOtp({
         variables: { phone }
       });
-      if (response.errors) return toastGraphqlErrros(response.errors);
       if (!response.data) throw new Error("Unexpected error!");
 
       setIsOtpShowed(true);
@@ -74,7 +73,6 @@ export const useLoginPage = (): UseLoginPage => {
       const response = await signInMutation({
         variables: { phone, code: otpCode }
       });
-      if (response.errors) return toastGraphqlErrros(response.errors);
       if (!response.data) throw new Error("Unexpected error!");
 
       setUser(response.data.signin.user);

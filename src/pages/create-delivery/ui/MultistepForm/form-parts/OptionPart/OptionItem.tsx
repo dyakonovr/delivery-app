@@ -1,8 +1,8 @@
 import { Plane as PlaneIcon, BusFront as BusFrontIcon } from "lucide-react";
 import classes from "./styles.module.css";
-import { DeliveryOptionType } from "@/shared/api";
 import { Typography } from "@/shared/ui";
 import { formatDeliveryPrice, formatDeliveryTime } from "@/entities/delivery";
+import { DeliveryOptionType } from "@/shared/api";
 
 interface Props {
   title: string;

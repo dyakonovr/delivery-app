@@ -10,7 +10,7 @@ import {
 } from "./form-parts";
 import type { MultistepFormInputField } from "./form-parts";
 import type { CreateDeliveryFormFields } from "../../model";
-import type { CalculateDeliveryOptions } from "@/shared/api";
+import type { CalculateDeliveryOptions } from "@/entities/delivery/api";
 import { Button } from "@/shared/ui";
 
 type InputsPartProps = {

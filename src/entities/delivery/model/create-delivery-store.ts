@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import type { CalculateDeliveryOptions, DeliveryPoint } from "@/shared/api";
+import type { CalculateDeliveryOptions } from "@/entities/delivery";
+import type { DeliveryPoint } from "@/shared/api";
 
 type State = {
   options: CalculateDeliveryOptions | null;

@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { formSchema, type CreateDeliveryFormSchema } from "../model";
 import type { UseFormReturn } from "react-hook-form";
 import type { MultistepFormScreens } from "@/pages/create-delivery/ui/MultistepForm";
-import { Payer, useCreateDeliveryOrderMutation } from "@/shared/api";
+import { useCreateDeliveryOrderMutation } from "@/entities/delivery/api";
 import {
   humanNameRegex,
   onlyNumbersRegex,
@@ -13,6 +13,7 @@ import {
   streetFieldRegex
 } from "@/shared/config";
 import { useCreateDeliveryStore } from "@/entities/delivery";
+import { Payer } from "@/shared/api";
 
 interface UseCreateDeliveryPage {
   isResultDialogShowed: boolean;

@@ -1,6 +1,6 @@
 import classes from "./styles.module.css";
 import { DeliveriesHistoryRow } from "@/entities/delivery";
-import { useGetDeliveryOrdersQuery } from "@/shared/api";
+import { useGetDeliveryOrdersQuery } from "@/entities/delivery/api";
 import { Container, LoadingSpin, Typography } from "@/shared/ui";
 import { GRAPHQL_AUTHORIZATION_CONTEXT } from "@/shared/config";
 

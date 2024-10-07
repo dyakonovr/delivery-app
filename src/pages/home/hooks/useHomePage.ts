@@ -5,12 +5,12 @@ import { homeFormSchema, type HomeFormSchema } from "../model/form-schema";
 import type { FieldErrors, UseFormRegister } from "react-hook-form";
 import type { SelectOption } from "@/shared/ui";
 import {
-  useGetDeliveryPointsQuery,
+  useCalculateDeliveryMutation,
   useGetDeliveryPackageTypesQuery,
-  useCalculateDeliveryMutation
-} from "@/shared/api";
+  useGetDeliveryPointsQuery
+} from "@/entities/delivery/api";
 import { PagePaths } from "@/shared/config";
-import { toastGraphqlErrros, omit } from "@/shared/lib";
+import { omit } from "@/shared/lib";
 import { useCreateDeliveryStore } from "@/entities/delivery";
 
 interface UseHomePage {
@@ -84,7 +84,6 @@ export const useHomePage = (): UseHomePage => {
         }
       });
 
-      if (response.errors) return toastGraphqlErrros(response.errors);
       if (!response.data) throw new Error("Unexpected error!");
 
       const options = response.data.calculateDelivery.options.map(

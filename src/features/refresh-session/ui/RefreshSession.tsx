@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useUserStore } from "@/entities/user";
-import { useSessionQuery } from "@/shared/api";
+import { useSessionQuery } from "@/entities/user";
 import { GRAPHQL_AUTHORIZATION_CONTEXT } from "@/shared/config";
 
 export function RefreshSession() {
