@@ -5,3 +5,4 @@ export * from "./login.tsx";
 export * from "./create-delivery.tsx";
 export * from "./deliveries-history.tsx";
 export * from "./delivery-details.tsx";
+export * from "./profile.tsx";

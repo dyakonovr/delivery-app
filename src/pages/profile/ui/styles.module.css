@@ -1,0 +1,27 @@
+.profile_page_loader {
+    margin-top: 24px;
+}
+
+.profile_page_form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.profile_page_form_wrapper {
+    display: flex;
+    gap: 24px;
+}
+
+.profile_page_form_column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.profile_page_form_button {
+    width: 100%;
+    max-width: 328px;
+}

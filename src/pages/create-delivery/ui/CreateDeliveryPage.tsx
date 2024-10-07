@@ -1,6 +1,6 @@
 import { FormProvider } from "react-hook-form";
-import { useCreateDeliveryPage } from "../hooks/useCreateDeliveryPage";
-import { MultistepForm } from "./MultistepForm/MultistepForm.tsx";
+import { useCreateDeliveryPage } from "../hooks";
+import { MultistepForm } from "./MultistepForm";
 import classes from "./styles.module.css";
 import { Container } from "@/shared/ui";
 

@@ -8,5 +8,6 @@ export * from "./get-delivery-orders";
 export * from "./get-delivery-order";
 export * from "./session";
 export * from "./cancel-delivery";
+export * from "./update-profile";
 
 export * from "./types.gql.generated";

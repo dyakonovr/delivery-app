@@ -3,5 +3,6 @@ export enum PagePaths {
   LOGIN = "/login",
   CREATE_DELIVERY = "/create-delivery",
   DELIVERIES_HISTORY = "/deliveries-history",
-  DELIVERY_DETAILS = `/delivery-details/$orderId`
+  DELIVERY_DETAILS = `/delivery-details/$orderId`,
+  PROFILE = "/profile"
 }

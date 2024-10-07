@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
-import { createDeliveryFormSchema, type CreateDeliveryFormSchema } from "../model";
+import { formSchema, type CreateDeliveryFormSchema } from "../model";
 import type { UseFormReturn } from "react-hook-form";
 import type { MultistepFormScreens } from "@/pages/create-delivery/ui/MultistepForm";
 import { Payer, useCreateDeliveryOrderMutation } from "@/shared/api";
@@ -27,7 +27,7 @@ export const useCreateDeliveryPage = (): UseCreateDeliveryPage => {
   const navigate = useNavigate();
 
   const form = useForm<CreateDeliveryFormSchema>({
-    resolver: zodResolver(createDeliveryFormSchema)
+    resolver: zodResolver(formSchema)
   });
 
   const [isResultDialogShowed, setIsResultDialogShowed] = useState(false);
@@ -271,7 +271,7 @@ export const useCreateDeliveryPage = (): UseCreateDeliveryPage => {
     }
   }
 
-  const onResultDialogClose = useCallback(
+  const resetStoreAndNavigate = useCallback(
     (path: string) => {
       navigate({ to: path });
       setOptionsAndPoints({ options: null, receiverPoint: null, senderPoint: null });
@@ -285,7 +285,7 @@ export const useCreateDeliveryPage = (): UseCreateDeliveryPage => {
     screens,
     form,
     onFormSubmit: form.handleSubmit(onSubmit),
-    onResultDialogClose: () => onResultDialogClose(PagePaths.HOME),
-    onResultDialogSubmit: () => onResultDialogClose(PagePaths.DELIVERIES_HISTORY)
+    onResultDialogClose: () => resetStoreAndNavigate(PagePaths.HOME),
+    onResultDialogSubmit: () => resetStoreAndNavigate(PagePaths.DELIVERIES_HISTORY)
   };
 };

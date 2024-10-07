@@ -1,5 +1,5 @@
-import { OTP_VALUE_LENGTH } from "../config/constants";
-import { useLoginPage } from "../hooks/useLoginPage";
+import { OTP_VALUE_LENGTH } from "../config";
+import { useLoginPage } from "../hooks";
 import classes from "./styles.module.css";
 import { filterNumberKeys } from "@/shared/lib";
 import { Button, Container, Input, Typography } from "@/shared/ui";

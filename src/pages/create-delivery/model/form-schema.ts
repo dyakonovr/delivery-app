@@ -68,7 +68,7 @@ const addressSchema = z
     }
   );
 
-export const createDeliveryFormSchema = z.object({
+export const formSchema = z.object({
   receiver: personSchema,
   sender: personSchema,
   receiverAddress: addressSchema,
@@ -77,5 +77,5 @@ export const createDeliveryFormSchema = z.object({
   payer: z.nativeEnum(Payer, { message: "Необходимо указать, кто оплатит доставку" })
 });
 
-export type CreateDeliveryFormSchema = z.infer<typeof createDeliveryFormSchema>;
+export type CreateDeliveryFormSchema = z.infer<typeof formSchema>;
 export type CreateDeliveryFormFields = FieldPath<CreateDeliveryFormSchema>;

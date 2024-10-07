@@ -4,7 +4,7 @@ import { useDialog } from "../hooks/useDialog";
 import classes from "./styles.module.css";
 import { DialogIcon } from "./Icon";
 import type { DialogIconType } from "./Icon";
-import { Typography } from "@/shared/ui";
+import { Button, Typography } from "@/shared/ui";
 
 interface Props {
   dialogClassName?: string;
@@ -39,7 +39,9 @@ export function Dialog({
           <CloseIcon className={classes["dialog_close_btn_icon"]} />
         </button>
 
-        <DialogIcon icon={icon} />
+        <Button transparent>
+          <DialogIcon icon={icon} />
+        </Button>
         <Typography variant="title" className={classes["dialog_title"]}>
           {title}
         </Typography>

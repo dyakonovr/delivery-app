@@ -4,11 +4,8 @@ import type { ComponentProps } from "react";
 import type { CreateDeliveryFormFields } from "../../../model";
 import { Input, Typography } from "@/shared/ui";
 
-export type MultistepFormInputField = {
-  labelText: string;
-  placeholder: string;
+export type MultistepFormInputField = ComponentProps<typeof Input> & {
   registerKey: CreateDeliveryFormFields;
-  patternOnInput?: ComponentProps<typeof Input>["patternOnInput"];
 };
 
 interface Props {
@@ -25,18 +22,12 @@ export function MultistepFormInputsPart({ title, fields }: Props) {
         {title}
       </Typography>
 
-      {fields.map((input) => (
+      {fields.map(({ registerKey, ...restProps }) => (
         <Controller
-          name={input.registerKey}
-          key={input.registerKey}
+          name={registerKey}
+          key={registerKey}
           render={({ field, fieldState }) => (
-            <Input
-              labelText={input.labelText}
-              placeholder={input.placeholder}
-              errorMessage={fieldState.error?.message}
-              patternOnInput={input.patternOnInput}
-              {...field}
-            />
+            <Input errorMessage={fieldState.error?.message} {...restProps} {...field} />
           )}
         />
       ))}

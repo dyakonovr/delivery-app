@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { loginFormSchema, type LoginFormSchema } from "../model/login-schema";
+import { loginFormSchema, type LoginFormSchema } from "../model/form-schema.ts";
 import type { FieldErrors, UseFormRegister } from "react-hook-form";
 import { useOtpMutation, useSignInMutation } from "@/shared/api";
 import { useUserStore } from "@/entities/user/model";

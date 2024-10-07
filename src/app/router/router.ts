@@ -5,6 +5,7 @@ import {
   deliveryDetailsRoute,
   homeRoute,
   loginRoute,
+  profileRoute,
   rootRoute
 } from "@/app/router/routes";
 
@@ -13,7 +14,8 @@ const routeTree = rootRoute.addChildren([
   loginRoute,
   createDeliveryRoute,
   deliveriesHistoryRoute,
-  deliveryDetailsRoute
+  deliveryDetailsRoute,
+  profileRoute
 ]);
 
 export const router = createRouter({ routeTree });

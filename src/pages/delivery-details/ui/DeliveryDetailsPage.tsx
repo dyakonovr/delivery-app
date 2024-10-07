@@ -1,4 +1,4 @@
-import { useDeliveryDetails } from "../hooks/useDeliveryDetails.ts";
+import { useDeliveryDetails } from "../hooks";
 import classes from "./styles.module.css";
 import { Button, Container, Dialog, LoadingSpin, Typography } from "@/shared/ui";
 import { DeliveryDetails } from "@/entities/delivery";

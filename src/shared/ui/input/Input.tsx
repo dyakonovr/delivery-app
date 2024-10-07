@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import { Typography } from "../typography/Typography";
 import classes from "./styles.module.css";
-import type { ComponentProps, ChangeEvent } from "react";
+import type { ChangeEvent, ComponentProps } from "react";
 
 interface Props extends ComponentProps<"input"> {
   labelText?: string;
@@ -26,16 +26,24 @@ export const Input = forwardRef<HTMLInputElement, Props>(
     ref
   ) => {
     const isError = !!errorMessage;
-    const [value, setValue] = useState<string>("");
+    const placeholder =
+      labelText && !props.placeholder ? labelText : (props.placeholder ?? "");
+    const [value, setValue] = useState<string | number | readonly string[]>(
+      props.value ?? ""
+    );
 
     // Functions
     function onChangeHandler(event: ChangeEvent<HTMLInputElement>) {
       const input = event.target as HTMLInputElement;
       if (!!patternOnInput && input.value !== "" && !patternOnInput.test(input.value)) {
-        return;
+        return setValue(value);
       }
 
       setValue(input.value);
+
+      if (props.onChange) {
+        props.onChange(event);
+      }
     }
     // Functions END
 
@@ -51,10 +59,10 @@ export const Input = forwardRef<HTMLInputElement, Props>(
           ref={ref}
           type="text"
           className={`${classes["input"]} ${isError && classes["error"]} ${className}`}
-          placeholder="Search"
+          placeholder={placeholder}
+          {...props}
           onChange={onChangeHandler}
           value={value}
-          {...props}
         />
 
         {hintMessageText && (

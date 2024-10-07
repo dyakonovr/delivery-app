@@ -1,0 +1,6 @@
+mutation UpdateProfile($phone: String!, $profile: UpdateProfileProfileDto!) {
+    updateProfile(phone: $phone, profile: $profile) {
+        reason
+        success
+    }
+}

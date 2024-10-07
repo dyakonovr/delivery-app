@@ -3,7 +3,7 @@ import {
   Navigation as NavigationIcon,
   Mail as MailIcon
 } from "lucide-react";
-import { useHomePage } from "../hooks/useHomePage";
+import { useHomePage } from "../hooks";
 import classes from "./styles.module.css";
 import { Button, Select, Typography } from "@/shared/ui";
 

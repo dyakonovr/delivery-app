@@ -21,7 +21,7 @@ export function Navigation() {
       <ul className={classes["header_navigation_list"]}>
         <li>
           <Link
-            to={PagePaths.HOME}
+            to={PagePaths.PROFILE}
             className={`${classes["header_navigation_link"]} ${isActive("ttt") && classes["active"]}`}
           >
             <ProfileIcon /> Профиль
