@@ -6,13 +6,13 @@ import { formSchema, type CreateDeliveryFormSchema } from "../model";
 import type { UseFormReturn } from "react-hook-form";
 import type { MultistepFormScreens } from "@/pages/create-delivery/ui/MultistepForm";
 import { Payer, useCreateDeliveryOrderMutation } from "@/shared/api";
-import { PagePaths } from "@/shared/config";
-import { useCreateDeliveryStore } from "@/entities/delivery";
 import {
-  streetFieldRegex,
   humanNameRegex,
-  onlyNumbersRegex
-} from "@/pages/create-delivery/model/form-patterns.ts";
+  onlyNumbersRegex,
+  PagePaths,
+  streetFieldRegex
+} from "@/shared/config";
+import { useCreateDeliveryStore } from "@/entities/delivery";
 
 interface UseCreateDeliveryPage {
   isResultDialogShowed: boolean;

@@ -3,10 +3,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import type { Control } from "react-hook-form";
 import type { ProfileFormSchema } from "@/pages/profile/model";
 import type { ProfilePageFormField } from "@/pages/profile/ui/Form.tsx";
+import { emailPattern } from "@/pages/profile/model";
 import { profileFormSchema } from "@/pages/profile/model";
 import { useUserStore } from "@/entities/user";
 import { useUpdateProfileMutation } from "@/shared/api";
-import { GRAPHQL_AUTHORIZATION_CONTEXT } from "@/shared/config";
+import {
+  GRAPHQL_AUTHORIZATION_CONTEXT,
+  humanNameRegex,
+  onlyNumbersRegex,
+  streetFieldRegex
+} from "@/shared/config";
 
 interface UseProfilePageForm {
   fields: ProfilePageFormField[][];
@@ -17,26 +23,27 @@ interface UseProfilePageForm {
 export const useProfilePageForm = (): UseProfilePageForm => {
   const { user, setUser } = useUserStore();
 
-  console.log("@user:", user);
-
   const fields: ProfilePageFormField[][] = [
     [
       {
         name: "lastname",
         inputProps: {
-          labelText: "Фамилия"
+          labelText: "Фамилия",
+          patternOnInput: humanNameRegex
         }
       },
       {
         name: "firstname",
         inputProps: {
-          labelText: "Имя"
+          labelText: "Имя",
+          patternOnInput: humanNameRegex
         }
       },
       {
         name: "middlename",
         inputProps: {
-          labelText: "Отчество"
+          labelText: "Отчество",
+          patternOnInput: humanNameRegex
         }
       }
     ],
@@ -45,19 +52,22 @@ export const useProfilePageForm = (): UseProfilePageForm => {
         name: "phone",
         inputProps: {
           labelText: "Номер телефона",
+          patternOnInput: onlyNumbersRegex,
           disabled: true
         }
       },
       {
         name: "email",
         inputProps: {
-          labelText: "Email"
+          labelText: "Email",
+          patternOnInput: emailPattern
         }
       },
       {
         name: "city",
         inputProps: {
-          labelText: "Город"
+          labelText: "Город",
+          patternOnInput: streetFieldRegex
         }
       }
     ]
