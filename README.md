@@ -1,9 +1,39 @@
 # delivery-app
 
-Этот репозиторий состоит из Frontend-приложений по офомлению доставки на разных фреймворках
+This template should help get you started developing with Vue 3 in Vite.
 
-## Задание
-Ссылка: https://omniscient-honeydew-f15.notion.site/7c46a3a33c8946bc8353d852afbf39a1#fe4b7a3fc5a94b77b8eaed3c1c0677f1
+## Recommended IDE Setup
 
-## Ссылки:
-* React 18 - https://github.com/dyakonovr/delivery-app/tree/react-18
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
