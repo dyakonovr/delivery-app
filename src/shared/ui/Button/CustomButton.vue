@@ -1,3 +1,12 @@
+<template>
+  <button
+    type="button"
+    :class="['btn-reset', 'button', `variant_${variant}`, `color_${color}`]"
+  >
+    <slot />
+  </button>
+</template>
+
 <script setup lang="ts">
 type ButtonVariant = "text" | "contained" | "link";
 type ButtonColor = "primary" | "secondary";
@@ -7,17 +16,8 @@ interface Props {
   color: ButtonColor;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 </script>
-
-<template>
-  <button
-    type="button"
-    :class="['btn-reset', 'button', `variant_${props.variant}`, `color_${props.color}`]"
-  >
-    <slot></slot>
-  </button>
-</template>
 
 <style scoped>
 .button {

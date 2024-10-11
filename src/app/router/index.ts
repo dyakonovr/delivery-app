@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../../pages/home/HomeView.vue";
+import { PagePaths } from "@/shared/config";
+import { HomePage } from "@/pages/home";
+import { LoginPage } from "@/pages/login";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: HomeView
+      path: PagePaths.HOME,
+      component: HomePage
+    },
+    {
+      path: PagePaths.LOGIN,
+      component: LoginPage
     }
   ]
 });

@@ -1,3 +1,9 @@
+<template>
+  <component :is="tag" :class="['typography', `variant_${variant}`]">
+    <slot />
+  </component>
+</template>
+
 <script setup lang="ts">
 type Tag = "div" | "span" | "h1" | "h2" | "p" | "label";
 type Variant = "title" | "regular" | "small" | "extra-small";
@@ -10,14 +16,10 @@ interface Props {
   variant: Variant;
 }
 
-const { tag = "div", variant } = defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  tag: "div"
+});
 </script>
-
-<template>
-  <component v-bind:is="tag" :class="['typography', `variant_${variant}`]"
-    ><slot></slot
-  ></component>
-</template>
 
 <style scoped>
 .typography {

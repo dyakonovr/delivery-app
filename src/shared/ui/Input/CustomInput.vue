@@ -1,3 +1,31 @@
+<template>
+  <div :class="['input_wrapper', rootClassName]">
+    <custom-typography v-show="labelText" variant="small" tag="label" class="label">
+      {{ labelText }}
+    </custom-typography>
+
+    <input type="text" :class="{ input: true, error: isError }" />
+
+    <custom-typography
+      v-show="hintMessageText"
+      variant="small"
+      tag="p"
+      class="hint_message"
+    >
+      {{ hintMessageText }}
+    </custom-typography>
+
+    <custom-typography
+      v-show="errorMessage"
+      variant="small"
+      tag="p"
+      class="error-message input_error_message"
+    >
+      {{ errorMessage }}
+    </custom-typography>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { CustomTypography } from "@/shared/ui";
 
@@ -9,38 +37,9 @@ interface Props {
   patternOnInput?: RegExp;
 }
 
-const { labelText, hintMessageText, errorMessage, patternOnInput, rootClassName } =
-  defineProps<Props>();
-const isError = !!errorMessage;
+const props = defineProps<Props>();
+const isError = !!props.errorMessage;
 </script>
-
-<template>
-  <div :class="['input_wrapper', rootClassName]">
-    <CustomTypography v-show="labelText" variant="small" tag="label" :class="['label']">
-      {{ labelText }}
-    </CustomTypography>
-
-    <input type="text" :class="['input', isError && 'error']" />
-
-    <CustomTypography
-      v-show="hintMessageText"
-      variant="small"
-      tag="p"
-      :class="['hint_message']"
-    >
-      {{ hintMessageText }}
-    </CustomTypography>
-
-    <CustomTypography
-      v-show="errorMessage"
-      variant="small"
-      tag="p"
-      :class="['error-message', 'input_error_message']"
-    >
-      {{ errorMessage }}
-    </CustomTypography>
-  </div>
-</template>
 
 <style scoped>
 .input_wrapper {

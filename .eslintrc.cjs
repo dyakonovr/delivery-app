@@ -34,6 +34,20 @@ module.exports = {
         ],
         alphabetical: false
       }
+    ],
+    "vue/block-order": [
+      "error",
+      {
+        order: ["template", "script", "style"]
+      }
+    ],
+    "vue/component-name-in-template-casing": [
+      "error",
+      "kebab-case",
+      {
+        registeredComponentsOnly: true,
+        ignores: []
+      }
     ]
   }
 };
