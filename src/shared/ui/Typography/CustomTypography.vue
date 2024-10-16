@@ -1,9 +1,3 @@
-<template>
-  <component :is="tag" :class="['typography', `variant_${variant}`]">
-    <slot />
-  </component>
-</template>
-
 <script setup lang="ts">
 type Tag = "div" | "span" | "h1" | "h2" | "p" | "label";
 type Variant = "title" | "regular" | "small" | "extra-small";
@@ -20,6 +14,12 @@ withDefaults(defineProps<Props>(), {
   tag: "div"
 });
 </script>
+
+<template>
+  <component :is="tag" :class="['typography', `variant_${variant}`]">
+    <slot />
+  </component>
+</template>
 
 <style scoped>
 .typography {

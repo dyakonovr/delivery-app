@@ -38,7 +38,7 @@ module.exports = {
     "vue/block-order": [
       "error",
       {
-        order: ["template", "script", "style"]
+        order: ["script", "template", "style"]
       }
     ],
     "vue/component-name-in-template-casing": [

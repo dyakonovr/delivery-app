@@ -1,10 +1,49 @@
+<script setup lang="ts">
+import { CustomTypography } from "@/shared/ui";
+import { computed, ref, watch } from "vue";
+
+interface Props {
+  labelText?: string;
+  hintMessageText?: string;
+  errorMessage?: string;
+  rootClassName?: string;
+  patternOnInput?: RegExp;
+}
+
+const props = defineProps<Props>();
+const model = defineModel();
+
+function onChangeHandler(event: Event) {
+  const input = event.target as HTMLInputElement;
+  if (
+    !!props.patternOnInput &&
+    input.value !== "" &&
+    !props.patternOnInput.test(input.value)
+  ) {
+    model.value = input.value.slice(0, -1);
+    return;
+  }
+
+  model.value = input.value;
+}
+
+const isError = computed(() => !!props.errorMessage);
+</script>
+
 <template>
   <div :class="['input_wrapper', rootClassName]">
     <custom-typography v-show="labelText" variant="small" tag="label" class="label">
       {{ labelText }}
     </custom-typography>
 
-    <input type="text" :class="{ input: true, error: isError }" />
+    <input
+      v-model="model"
+      v-bind="$attrs"
+      type="text"
+      class="input"
+      :class="{ error: isError }"
+      @input="onChangeHandler"
+    />
 
     <custom-typography
       v-show="hintMessageText"
@@ -25,21 +64,6 @@
     </custom-typography>
   </div>
 </template>
-
-<script setup lang="ts">
-import { CustomTypography } from "@/shared/ui";
-
-interface Props {
-  labelText?: string;
-  hintMessageText?: string;
-  errorMessage?: string;
-  rootClassName?: string;
-  patternOnInput?: RegExp;
-}
-
-const props = defineProps<Props>();
-const isError = !!props.errorMessage;
-</script>
 
 <style scoped>
 .input_wrapper {

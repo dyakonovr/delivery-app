@@ -1,12 +1,3 @@
-<template>
-  <button
-    type="button"
-    :class="['btn-reset', 'button', `variant_${variant}`, `color_${color}`]"
-  >
-    <slot />
-  </button>
-</template>
-
 <script setup lang="ts">
 type ButtonVariant = "text" | "contained" | "link";
 type ButtonColor = "primary" | "secondary";
@@ -18,6 +9,16 @@ interface Props {
 
 defineProps<Props>();
 </script>
+
+<template>
+  <button
+    v-bind="$attrs"
+    type="button"
+    :class="['btn-reset', 'button', `variant_${variant}`, `color_${color}`]"
+  >
+    <slot />
+  </button>
+</template>
 
 <style scoped>
 .button {

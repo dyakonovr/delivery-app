@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { PagePaths } from "@/shared/config";
+import ProfileIconSvg from "../assets/profile-icon.svg";
+import HistoryIconSvg from "../assets/history-icon.svg";
+
+// Functions
+function isActive(path: string): boolean {
+  // return location.href === path;
+  // TODO: write this func
+  return false;
+}
+// Functions END
+</script>
+
 <template>
   <nav>
     <ul class="header_navigation_list">
@@ -12,8 +26,8 @@
       <li>
         <router-link
           :to="PagePaths.DELIVERIES_HISTORY"
+          class="header_navigation_link"
           :class="{
-            header_navigation_link: true,
             active: isActive(PagePaths.DELIVERIES_HISTORY)
           }"
         >
@@ -23,20 +37,6 @@
     </ul>
   </nav>
 </template>
-
-<script setup lang="ts">
-import { PagePaths } from "@/shared/config";
-import ProfileIconSvg from "../assets/profile-icon.svg";
-import HistoryIconSvg from "../assets/history-icon.svg";
-
-// Functions
-function isActive(path: string): boolean {
-  // return location.href === path;
-  // TODO: write this func
-  return false;
-}
-// Functions END
-</script>
 
 <style scoped>
 .header_navigation_list {

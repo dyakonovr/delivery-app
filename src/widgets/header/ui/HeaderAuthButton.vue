@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { CustomButton } from "@/shared/ui";
+import LogoutIconSvg from "../assets/logout-icon.svg";
+import { useUserStore } from "@/entities/user";
+import { useRouter } from "vue-router";
+import { PagePaths } from "@/shared/config";
+
+const store = useUserStore();
+const router = useRouter();
+</script>
+
 <template>
   <custom-button
     variant="text"
@@ -9,17 +20,6 @@
     {{ store.isAuth ? "Выйти" : "Войти" }}
   </custom-button>
 </template>
-
-<script setup lang="ts">
-import { CustomButton } from "@/shared/ui";
-import LogoutIconSvg from "../assets/logout-icon.svg";
-import { useUserStore } from "@/entities/user";
-import { useRouter } from "vue-router";
-import { PagePaths } from "@/shared/config";
-
-const store = useUserStore();
-const router = useRouter();
-</script>
 
 <style scoped>
 .auth_button {

@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { CustomContainer, CustomLogo } from "@/shared/ui";
+import HeaderNavigation from "./HeaderNavigation.vue";
+import HeaderAuthButton from "./HeaderAuthButton.vue";
+import { PagePaths } from "@/shared/config";
+</script>
+
 <template>
   <header class="header">
     <custom-container class="header_container">
@@ -7,13 +14,6 @@
     </custom-container>
   </header>
 </template>
-
-<script setup lang="ts">
-import { CustomContainer, CustomLogo } from "@/shared/ui";
-import HeaderNavigation from "./HeaderNavigation.vue";
-import HeaderAuthButton from "./HeaderAuthButton.vue";
-import { PagePaths } from "@/shared/config";
-</script>
 
 <style scoped>
 .header {

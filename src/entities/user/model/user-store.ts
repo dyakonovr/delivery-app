@@ -1,9 +1,5 @@
 import { defineStore } from "pinia";
-
-interface User {
-  id: string;
-  name: string;
-}
+import type { User } from "./types";
 
 interface State {
   user: User | null;
