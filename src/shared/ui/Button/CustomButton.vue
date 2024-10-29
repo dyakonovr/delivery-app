@@ -12,7 +12,6 @@ defineProps<Props>();
 
 <template>
   <button
-    v-bind="$attrs"
     type="button"
     :class="['btn-reset', 'button', `variant_${variant}`, `color_${color}`]"
   >

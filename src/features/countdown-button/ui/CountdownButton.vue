@@ -35,7 +35,6 @@ function onClickFx() {
   <custom-button
     variant="link"
     color="secondary"
-    v-bind="$attrs"
     :disabled="timeLeft > 0"
     class="countdown_button"
     @click="onClickFx"
