@@ -8,11 +8,10 @@ export const loginFormSchema = yup.object({
     .min(11, "Номер состоит из 11 символов")
     .max(11, "Номер состоит из 11 символов"),
   otpCode: yup
-    .string()
-    .required(`Поле является обязательным и содержит только цифры`)
+    .number()
     .min(MIN_OTP_VALUE, `Код должен состоять из ${OTP_VALUE_LENGTH} символов`)
     .max(MAX_OTP_VALUE, `Код должен состоять из ${OTP_VALUE_LENGTH} символов`)
     .optional()
 });
 
-export interface LoginFormSchema extends yup.InferType<typeof loginFormSchema> {}
+export type LoginFormSchema = yup.InferType<typeof loginFormSchema>;

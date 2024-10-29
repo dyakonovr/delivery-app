@@ -7,15 +7,17 @@ import { PagePaths } from "@/shared/config";
 
 const store = useUserStore();
 const router = useRouter();
+
+// Functions
+function handleClick() {
+  if (store.isAuth) return store.setUser(null);
+  router.push(PagePaths.LOGIN);
+}
+// Functions END
 </script>
 
 <template>
-  <custom-button
-    variant="text"
-    color="primary"
-    class="auth_button"
-    @click="router.push(PagePaths.LOGIN)"
-  >
+  <custom-button variant="text" color="primary" class="auth_button" @click="handleClick">
     <logout-icon-svg />{{ " " }}
     {{ store.isAuth ? "Выйти" : "Войти" }}
   </custom-button>

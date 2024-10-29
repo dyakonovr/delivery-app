@@ -4,7 +4,6 @@ import { createOtp, signIn, useUserStore } from "@/entities/user";
 import { LOCALSTORAGE_AUTH_TOKEN, PagePaths } from "@/shared/config";
 import { useRouter } from "vue-router";
 import { type FormContext, useForm } from "vee-validate";
-import { wait } from "@/shared/utils";
 
 interface UseLoginPage {
   form: FormContext<LoginFormSchema>;

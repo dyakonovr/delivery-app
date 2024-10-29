@@ -13,7 +13,7 @@ export function useCountdown(seconds: Ref<number>): UseCountdown {
 
   watch(seconds, (newV) => {
     stop();
-    timeLeft.value = newV;
+    timeLeft.value = Math.round(newV);
   });
 
   onUnmounted(() => {
