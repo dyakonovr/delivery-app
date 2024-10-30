@@ -5,3 +5,4 @@ export * from "./Logo";
 export * from "./LoadingSpin";
 export * from "./Input";
 export * from "./Select";
+export * from "./RadioButton";

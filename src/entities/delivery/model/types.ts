@@ -14,10 +14,20 @@ export interface DeliveryPackageType {
   weight: string;
 }
 
+export enum DeliveryOptionType {
+  "DEFAULT" = "DEFAULT",
+  "EXPRESS" = "EXPRESS"
+}
+
 export interface DeliveryOption {
   id: string;
   price: number;
   days: number;
   name: string;
-  type: string;
+  type: DeliveryOptionType;
+}
+
+export enum DeliveryPayer {
+  RECEIVER = "RECEIVER",
+  SENDER = "SENDER"
 }

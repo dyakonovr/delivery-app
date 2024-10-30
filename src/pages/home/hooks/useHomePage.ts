@@ -10,15 +10,15 @@ import {
   getDeliveryPackageTypes,
   getDeliveryPoints
 } from "@/entities/delivery";
-import type { SelectOption } from "@/shared/ui";
-import { computed, type ComputedRef, onMounted, ref, watch } from "vue";
+import type { CustomSelectOption } from "@/shared/ui";
+import { computed, type ComputedRef, onMounted, ref } from "vue";
 import { PagePaths } from "@/shared/config";
 import { useCreateDeliveryStore } from "@/entities/delivery/model/create-delivery-store";
 
 interface UseHomePage {
   form: FormContext<HomeFormSchema>;
-  deliveryPointsOptions: ComputedRef<SelectOption[]>;
-  deliveryPackageTypesOptions: ComputedRef<SelectOption[]>;
+  deliveryPointsOptions: ComputedRef<CustomSelectOption[]>;
+  deliveryPackageTypesOptions: ComputedRef<CustomSelectOption[]>;
   onFormSubmit: () => void;
 }
 

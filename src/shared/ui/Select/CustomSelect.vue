@@ -1,24 +1,24 @@
 <script lang="ts" setup>
-import type { SelectOption } from "./types";
+import type { CustomSelectOption } from "./types";
 import { CustomTypography } from "@/shared/ui";
 import { ref } from "vue";
 
 interface Props {
-  options: SelectOption[];
+  options: CustomSelectOption[];
   placeholder?: string;
   labelText?: string;
   errorMessage?: string;
-  onChangeFx?: (option: SelectOption) => void;
+  onChangeFx?: (option: CustomSelectOption) => void;
 }
 
 defineProps<Props>();
 const model = defineModel();
 
 const emit = defineEmits<{
-  (e: "changeOption", option: SelectOption): void;
+  (e: "changeOption", option: CustomSelectOption): void;
 }>();
 
-const selectedOption = ref<SelectOption | null>(null);
+const selectedOption = ref<CustomSelectOption | null>(null);
 const isOpen = ref(false);
 
 defineOptions({
@@ -26,7 +26,7 @@ defineOptions({
 });
 
 // Functions
-function changeOption(option: SelectOption) {
+function changeOption(option: CustomSelectOption) {
   selectedOption.value = option;
   model.value = option.value;
   isOpen.value = false;
